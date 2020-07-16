@@ -13,6 +13,8 @@ Tener Docker y Docker compose instalado
 
 4) Crear registro de tipo A apuntando al servidor en todos los dominios del paso número 3
 
-5) Ir a la carpeta donde esta docker-compose.yaml y ejecutar ```docker-compose up -d```
+5) Ingresar al archivo docker-compose.yaml y configurar el límite de memoria ram que cada contenedor puede usar
 
-6) ¡Disfruta!
+6) Ir a la carpeta donde esta docker-compose.yaml y ejecutar ```docker-compose up -d```
+
+7) ¡Disfruta!

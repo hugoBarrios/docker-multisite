@@ -43,7 +43,7 @@ services:
       - traefik.enable=true
       - traefik.http.routers.getl_web1.entrypoints=websecure
       - traefik.http.routers.getl_web1.tls.certresolver=myresolver
-      - traefik.http.routers.getl_web1.rule=Host(`dominio1.com`, `www.dominio1.com`)
+      - traefik.http.routers.getl_web1.rule=Host(`dominio1.com`, `www.dominio1.com`) # Ejemplo con 2 dominios en el mismo contenedor
       - traefik.http.services.getl_web1.loadbalancer.server.port=80
 
   web2:

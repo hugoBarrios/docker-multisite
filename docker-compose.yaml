@@ -43,7 +43,7 @@ services:
       - traefik.enable=true
       - traefik.http.routers.getl_web1.entrypoints=websecure
       - traefik.http.routers.getl_web1.tls.certresolver=myresolver
-      - traefik.http.routers.getl_web1.rule=Host(`dominio1.com`, `www.dominio1.com`) # Ejemplo con 2 dominios en el mismo contenedor
+      - traefik.http.routers.getl_web1.rule=Host(`getlavdo.com`, `www.getlavdo.com`) # Ejemplo con 2 dominios en el mismo contenedor
       - traefik.http.services.getl_web1.loadbalancer.server.port=80
 
   web2:
@@ -62,25 +62,5 @@ services:
       - traefik.enable=true
       - traefik.http.routers.getl_web2.entrypoints=websecure
       - traefik.http.routers.getl_web2.tls.certresolver=myresolver
-      - traefik.http.routers.getl_web2.rule=Host(`dominio2.com`)
+      - traefik.http.routers.getl_web2.rule=Host(`getlavdo.co`, `www.getlavdo.co`)
       - traefik.http.services.getl_web2.loadbalancer.server.port=80
-
-  web3:
-    container_name: getl_web3
-    image: php:7.3-apache
-    dns:
-      - 1.1.1.1
-      - 1.0.0.1
-    volumes:
-      - "./app/web3:/var/www/html"
-    networks:
-      - getl_network
-    mem_limit: 512mb
-    restart: "unless-stopped"
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.getl_web3.entrypoints=websecure
-      - traefik.http.routers.getl_web3.tls.certresolver=myresolver
-      - traefik.http.routers.getl_web3.rule=Host(`dominio3.com`)
-      - traefik.http.services.getl_web3.loadbalancer.server.port=80
-
